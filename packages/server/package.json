@@ -1,0 +1,50 @@
+{
+  "name": "pkg-name",
+  "type": "commonjs",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.13.2",
+  "description": "",
+  "author": "Khalil <lkhaliliu@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@acvv/eslint-config": "0.0.1",
+    "@types/node": "^18.7.18",
+    "eslint": "^8.23.1",
+    "typescript": "^4.8.3",
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "multiparty": "^4.2.3",
+    "ts-node": "^10.9.1"
+  }
+}
